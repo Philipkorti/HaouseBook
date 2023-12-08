@@ -80,10 +80,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Events\FinishAddTransactionViewChangeEvent.cs" />
     <Compile Include="Events\MainMenueViewChangeEvent.cs" />
+    <Compile Include="ViewModels\AddTransactionViewModel.cs" />
+    <Compile Include="ViewModels\FinishAddTransactionViewModel.cs" />
     <Compile Include="ViewModels\FirstFurnishingsViewModel.cs" />
     <Compile Include="ViewModels\MainMenueViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\StartAddTransactionViewModel.cs" />
+    <Compile Include="Views\AddTransaction.xaml.cs">
+      <DependentUpon>AddTransaction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FinishAddTransactionView.xaml.cs">
+      <DependentUpon>FinishAddTransactionView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainMenueView.xaml.cs">
       <DependentUpon>MainMenueView.xaml</DependentUpon>
     </Compile>
@@ -93,6 +103,9 @@
     </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StartAddTransactionView.xaml.cs">
+      <DependentUpon>StartAddTransactionView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -106,6 +119,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AddTransaction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FinishAddTransactionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainMenueView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -115,6 +136,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StartAddTransactionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

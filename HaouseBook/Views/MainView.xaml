@@ -7,6 +7,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50px"/>
+            <RowDefinition/>
+            <RowDefinition Height="50px"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#587792"/>
+        <Rectangle Grid.Row="2" Fill="#587792"/>
+        <StackPanel Orientation="Horizontal">
+            <Button Width="100" Background="Transparent">Overview</Button>
+            <Button Width="100" Background="Transparent">Transaction</Button>
+        </StackPanel>
     </Grid>
 </UserControl>

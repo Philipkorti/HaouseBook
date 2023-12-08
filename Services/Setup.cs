@@ -49,5 +49,26 @@ namespace Services
             }
         }
 
+        public static void ReadInformation(out Config config)
+        {
+            config = new Config();
+            List<string> list = new List<string>();
+            using(StreamReader sr = new StreamReader(ConstData.FolderPath + @"\Config\Config.txt"))
+            {
+                while(!sr.EndOfStream)
+                {
+                    list.Add(sr.ReadLine());
+                }
+            }
+            config.Path = list[0];
+            config.Country = list[1];
+            config.Curentcy = list[2];
+            config.Income = list[3];
+            config.Forthmonthsalary = Convert.ToBoolean(list[5]);
+            config.Monthsalary = Convert.ToBoolean(list[5]);
+            config.ForthmonthsalaryDate = Convert.ToDateTime(list[6]);
+            config.MonthsalaryDate = Convert.ToDateTime(list[7]);
+        }
+
     }
 }
