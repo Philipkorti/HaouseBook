@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace HaouseBook.ViewModels
@@ -14,7 +15,22 @@ namespace HaouseBook.ViewModels
     {
         #region ------------------------- Properties, Indexers ------------------------------------------------------------
         public ICommand AddTransactionCommand { get; private set; }
+        private UserControl userControl;
         #endregion
+
+        public UserControl UserControl
+        {
+            get { return userControl; }
+            set 
+            {
+                if (this.userControl != value)
+                {
+                    this.userControl= value;
+                    this.OnPropertyChanged(nameof(this.UserControl));
+                }
+            }
+
+        }
 
         #region ------------------------- Constructors, Destructors, Dispose, Clone ---------------------------------------
         public MainMenueViewModel(IEventAggregator eventAggregator) : base(eventAggregator) 

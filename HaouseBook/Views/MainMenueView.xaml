@@ -6,7 +6,28 @@
              xmlns:local="clr-namespace:HaouseBook.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Resources/ButtonResource.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Grid>
-        <Button Command="{Binding Path=AddTransactionCommand}">Add Transection</Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50px"/>
+            <RowDefinition/>
+            <RowDefinition Height="50px"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#587792"/>
+        <Rectangle Grid.Row="2" Fill="#587792"/>
+        <StackPanel Orientation="Horizontal">
+            <Button Style="{StaticResource menu}" >Overview</Button>
+            <Button Style="{StaticResource menu}">Transaction</Button>
+            <Button Style="{StaticResource menu}">New Transaction</Button>
+            <Button Style="{StaticResource menu}">Settings</Button>
+        </StackPanel>
+        <UserControl Content="{Binding Path=UserControl}"/>
+        <Button Grid.Row="2" Style="{StaticResource menu}">About</Button>
     </Grid>
 </UserControl>
