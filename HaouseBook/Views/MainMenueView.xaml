@@ -22,12 +22,12 @@
         <Rectangle Fill="#587792"/>
         <Rectangle Grid.Row="2" Fill="#587792"/>
         <StackPanel Orientation="Horizontal">
-            <Button Style="{StaticResource menu}" >Overview</Button>
-            <Button Style="{StaticResource menu}">Transaction</Button>
-            <Button Style="{StaticResource menu}">New Transaction</Button>
-            <Button Style="{StaticResource menu}">Settings</Button>
+            <Button Style="{StaticResource menu}" Command="{Binding Path=EditWindowCommand}" CommandParameter="1">Overview</Button>
+            <Button Style="{StaticResource menu}" Command="{Binding Path=EditWindowCommand}" CommandParameter="2">Transaction</Button>
+            <Button Style="{StaticResource menu}" Command="{Binding Path=EditWindowCommand}" CommandParameter="3">New Transaction</Button>
+            <Button Style="{StaticResource menu}" Command="{Binding Path=EditWindowCommand}" CommandParameter="4">Settings</Button>
         </StackPanel>
-        <UserControl Content="{Binding Path=UserControl}"/>
+        <UserControl Grid.Row="1" Content="{Binding Path=UserControl}"/>
         <Button Grid.Row="2" Style="{StaticResource menu}">About</Button>
     </Grid>
 </UserControl>

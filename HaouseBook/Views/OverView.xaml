@@ -10,6 +10,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../Resources/BorderResource.xaml"/>
+                <ResourceDictionary Source="../Resources/TextBlockResource.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -20,17 +21,32 @@
         </Grid.RowDefinitions>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Border Background="Green" Style="{StaticResource InfoTextBorder}">
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">ghkc</TextBlock>
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource InfoText}">Einnahmen</TextBlock>
+                    <TextBlock Style="{StaticResource InfoText}" FontWeight="Bold">0</TextBlock>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="1" Background="Red" Style="{StaticResource InfoTextBorder}">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource InfoText}">Ausgaben</TextBlock>
+                    <TextBlock Style="{StaticResource InfoText}" FontWeight="Bold">0</TextBlock>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="2" Style="{StaticResource InfoTextBorder}" Background="#FFD4D4">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource InfoText}">Kontostand</TextBlock>
+                    <TextBlock Style="{StaticResource InfoText}" FontWeight="Bold">0</TextBlock>
+                </StackPanel>
             </Border>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="266.667"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
         </Grid>

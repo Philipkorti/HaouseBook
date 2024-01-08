@@ -15,6 +15,7 @@ namespace HaouseBook.ViewModels
     {
         #region ------------------------- Properties, Indexers ------------------------------------------------------------
         public ICommand AddTransactionCommand { get; private set; }
+        public ICommand EditWindowCommand { get; private set; }
         private UserControl userControl;
         #endregion
 
@@ -36,6 +37,7 @@ namespace HaouseBook.ViewModels
         public MainMenueViewModel(IEventAggregator eventAggregator) : base(eventAggregator) 
         {
             this.AddTransactionCommand = new ActionCommand(this.AddTransactionCommandExecute, this.AddTransactionCommandCanExecute);
+            this.EditWindowCommand = new ActionCommand(this.EditWindowCommandExecute, this.EditWindowCommandCanExecute);
         }
         #endregion
 
@@ -60,6 +62,43 @@ namespace HaouseBook.ViewModels
             AddTransactionViewModel addTransactionViewModel = new AddTransactionViewModel(this.EventAggregator);
             addTransaction.DataContext = addTransactionViewModel;
             addTransaction.ShowDialog();
+        }
+
+        /// <summary>
+        /// Determines wheter the edit window command can be executed.
+        /// </summary>
+        /// <param name="parameter">Data used by the command.</param>
+        /// <returns><c>true</c> if the command can be executed otherwise <c>false</c>. </returns>
+        private bool EditWindowCommandCanExecute(object parameter)
+        {
+            return true;
+        }
+
+        private void EditWindowCommandExecute(object parameter)
+        {
+            switch(parameter)
+            {
+                case "1":
+                    {
+                        OverViewViewModel overViewViewModel = new OverViewViewModel(this.EventAggregator);
+                        OverView overView = new OverView();
+                        overView.DataContext = overViewViewModel;
+                        this.UserControl= overView;
+                        break;
+                    }
+                case "2":
+                    {
+                        break;
+                    }
+                    case "3":
+                    {
+                        break;
+                    }
+                    case "4":
+                    {
+                        break;
+                    }
+            }
         }
         #endregion
 

@@ -4,5 +4,8 @@
         <Setter Property="Width" Value="250"/>
         <Setter Property="Height" Value="76"/>
         <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="Height" Value="100"/>
+        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="Margin" Value="20,0"/>
     </Style>
 </ResourceDictionary>
