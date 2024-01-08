@@ -88,6 +88,7 @@
     <Compile Include="ViewModels\FirstFurnishingsViewModel.cs" />
     <Compile Include="ViewModels\MainMenueViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\OverViewViewModel.cs" />
     <Compile Include="ViewModels\StartAddTransactionViewModel.cs" />
     <Compile Include="Views\AddTransaction.xaml.cs">
       <DependentUpon>AddTransaction.xaml</DependentUpon>
