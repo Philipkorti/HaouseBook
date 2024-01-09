@@ -17,6 +17,48 @@ namespace HaouseBook.ViewModels
         public ICommand AddTransactionCommand { get; private set; }
         public ICommand EditWindowCommand { get; private set; }
         private UserControl userControl;
+        private List<string> selectMonth = new List<string> { "Januar", "Februar" };
+        private List<string> selectYear;
+        private string selectedMonth;
+
+        public string SelectedMonth
+        {
+            get { return this.selectedMonth; }
+            set
+            {
+                if (this.selectedMonth != value)
+                {
+                    this.selectedMonth = value;
+                    this.OnPropertyChanged(nameof(this.SelectedMonth));
+                }
+            }
+        }
+        public List<string> SelectMonth
+        {
+            get { return selectMonth; }
+            set 
+            { 
+                if(selectMonth != value)
+                {
+                    selectMonth = value;
+                    this.OnPropertyChanged(nameof(this.SelectMonth));
+                }
+            }
+        }
+
+        public List<string> SelectYear
+        {
+            get { return selectYear; }
+            set
+            {
+                if(value != selectYear)
+                {
+                    selectYear = value;
+                    this.OnPropertyChanged(nameof(this.SelectYear));
+                }
+            }
+        }
+
         #endregion
 
         public UserControl UserControl
@@ -38,6 +80,7 @@ namespace HaouseBook.ViewModels
         {
             this.AddTransactionCommand = new ActionCommand(this.AddTransactionCommandExecute, this.AddTransactionCommandCanExecute);
             this.EditWindowCommand = new ActionCommand(this.EditWindowCommandExecute, this.EditWindowCommandCanExecute);
+            this.SelectedMonth = this.SelectMonth[0];
         }
         #endregion
 
@@ -92,6 +135,10 @@ namespace HaouseBook.ViewModels
                     }
                     case "3":
                     {
+                        StartAddTransactionView startAddTransactionView = new StartAddTransactionView();
+                        StartAddTransactionViewModel startAddTransactionViewModel = new StartAddTransactionViewModel(this.EventAggregator);
+                        startAddTransactionView.DataContext = startAddTransactionViewModel;
+                        this.UserControl= startAddTransactionView;
                         break;
                     }
                     case "4":

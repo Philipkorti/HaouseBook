@@ -10,6 +10,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../Resources/ButtonResource.xaml"/>
+                <ResourceDictionary Source="../Resources/ComboBoxResource.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -28,6 +29,18 @@
             <Button Style="{StaticResource menu}" Command="{Binding Path=EditWindowCommand}" CommandParameter="4">Settings</Button>
         </StackPanel>
         <UserControl Grid.Row="1" Content="{Binding Path=UserControl}"/>
-        <Button Grid.Row="2" Style="{StaticResource menu}">About</Button>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource menu}">About</Button>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <ComboBox ItemsSource="{Binding SelectMonth}" SelectedItem="{Binding SelectedMonth}" Style="{StaticResource selectData}">
+                </ComboBox>
+                <ComboBox ItemsSource="{Binding SelectYear}" Style="{StaticResource selectData}"></ComboBox>
+            </StackPanel>
+        </Grid>
+        
     </Grid>
 </UserControl>
